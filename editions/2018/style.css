@@ -3,15 +3,21 @@ STILE SPECIFICO EDIZIONE 2018
 ============================================================================ */
 
 :root {
-  --edition-accent: #8b2e24;
-  --edition-accent-2: #d99149;
-  --edition-bg: #f3e6d2;
-  --edition-bg-2: #e9dac0;
-  --edition-ink: #c0b211;
+  --edition-accent: #d33a2e;
+  --edition-accent-2: #d3613d;
+  --edition-accent-3: #049f9c;
+  --edition-accent-4: #f4e4b3;
+  --edition-accent-5: #f0ab72;
+  --edition-bg: #030212;
+  --edition-bg-2: #120d1b;
+  --edition-bg-3: #1f1629;
+  --edition-ink: #f4e4b3;
+  --edition-ink-soft: #e7d9ad;
 }
 
 body {
   background: var(--edition-bg);
+  color: var(--edition-ink);
 }
 
 .eyebrow,
@@ -20,42 +26,89 @@ body {
 .nav-links a.active::after,
 .lang-switch a.active,
 .btn-x:hover,
-.btn-x:hover .arr {
-  color: var(--edition-accent);
+.btn-x:hover .arr,
+.tag-day,
+.slot .time,
+.loc-info .addr {
+  color: var(--edition-accent-4);
 }
 
 .btn-x,
 .btn-x:hover {
   border-color: var(--edition-accent);
   background: var(--edition-accent);
+  color: #fff4df;
 }
 
 .section--alt {
-  background: var(--edition-bg-2);
+  background: linear-gradient(180deg, var(--edition-bg-2), var(--edition-bg-3));
 }
 
 .hero {
-  background: linear-gradient(135deg, rgba(72, 24, 20, 0.92), rgba(164, 95, 51, 0.72));
+  background: linear-gradient(135deg, rgba(3, 2, 18, 0.95), rgba(211, 58, 46, 0.72), rgba(4, 159, 156, 0.4));
+}
+
+.hero-sub,
+.lead,
+.feature p,
+.loc-info p,
+.prose p,
+.footer .f-tag,
+.footer ul a,
+.slot .stage,
+.nav-drop-menu a,
+.lineup-rest a {
+  color: var(--edition-ink-soft);
 }
 
 .hero-title,
 .section-title,
-.ed-card-year {
-  color: var(--edition-ink);
+.ed-card-year,
+.feature h3,
+.slot .act,
+.loc-info h3,
+.page-hero .title,
+.prose h2 {
+  color: var(--edition-accent-4);
+}
+
+.ed-card {
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(244, 228, 179, 0.28);
 }
 
 .ed-card:hover {
-  border-color: var(--edition-accent);
-  box-shadow: 0 18px 32px rgba(139, 46, 36, 0.12);
+  border-color: var(--edition-accent-2);
+  box-shadow: 0 18px 32px rgba(211, 58, 46, 0.22);
+  background: rgba(211, 58, 46, 0.08);
 }
 
 .marquee {
-  background: rgba(139, 46, 36, 0.08);
-  border-top: 1px solid rgba(139, 46, 36, 0.18);
-  border-bottom: 1px solid rgba(139, 46, 36, 0.18);
+  background: linear-gradient(90deg, var(--edition-accent), var(--edition-accent-2));
+  color: var(--edition-accent-4);
+  border-top: 2px solid rgba(244, 228, 179, 0.28);
+  border-bottom: 2px solid rgba(244, 228, 179, 0.28);
 }
 
 .lineup-headliners a,
 .lineup-rest a {
-  border-color: rgba(139, 46, 36, 0.35);
+  border-color: rgba(244, 228, 179, 0.22);
+}
+
+.lineup-headliners a:hover,
+.lineup-rest a:hover {
+  color: var(--edition-accent-5);
+}
+
+.nav-drop-menu .nav-drop-inner {
+  background: #120d1b;
+  border-color: rgba(244, 228, 179, 0.12);
+}
+
+.footer {
+  background: linear-gradient(180deg, #09070d, #02050c);
+}
+
+.footer-bottom {
+  border-top-color: rgba(244, 228, 179, 0.12);
 }

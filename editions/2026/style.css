@@ -5,13 +5,17 @@ STILE SPECIFICO EDIZIONE 2026
 :root {
   --edition-accent: #000000;
   --edition-accent-2: #c1c1b0;
+  --edition-accent-3: #f0ead9;
   --edition-bg: #c13717;
   --edition-bg-2: #c25942;
-  --edition-ink: #000000;
+  --edition-bg-3: #2b140f;
+  --edition-ink: #f0ead9;
+  --edition-ink-soft: #e6dbc5;
 }
 
 body {
   background: var(--edition-bg);
+  color: var(--edition-ink);
 }
 
 .eyebrow,
@@ -20,41 +24,80 @@ body {
 .nav-links a.active::after,
 .lang-switch a.active,
 .btn-x:hover,
-.btn-x:hover .arr {
-  color: var(--edition-accent);
+.btn-x:hover .arr,
+.tag-day,
+.slot .time,
+.feature .num,
+.loc-info .addr {
+  color: var(--edition-accent-2);
 }
 
 .btn-x,
 .btn-x:hover {
   border-color: var(--edition-accent);
   background: var(--edition-accent);
+  color: var(--edition-accent-3);
 }
 
 .section--alt {
-  background: var(--edition-bg-2);
+  background: linear-gradient(180deg, var(--edition-bg-2), var(--edition-bg-3));
 }
 
 .hero {
-  background: linear-gradient(135deg, rgba(18, 42, 28, 0.92), rgba(85, 96, 51, 0.7));
+  background: linear-gradient(135deg, rgba(18, 18, 18, 0.92), rgba(193, 49, 23, 0.75), rgba(194, 89, 66, 0.82));
+}
+
+.hero-sub,
+.lead,
+.feature p,
+.loc-info p,
+.prose p,
+.footer .f-tag,
+.footer ul a,
+.slot .stage,
+.lineup-rest a,
+.nav-drop-menu a {
+  color: var(--edition-ink-soft);
+}
+
+.hero-title,
+.section-title,
+.ed-card-year,
+.feature h3,
+.slot .act,
+.loc-info h3,
+.page-hero .title,
+.prose h2 {
+  color: var(--edition-accent-3);
+}
+
+.ed-card {
+  background: rgba(0,0,0,0.18);
+  border-color: rgba(241, 234, 217, 0.2);
 }
 
 .ed-card:hover {
   border-color: var(--edition-accent);
-  box-shadow: 0 18px 32px rgba(31, 93, 63, 0.12);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.18);
+  background: rgba(0, 0, 0, 0.26);
 }
 
 .marquee {
   background: #c1c1b0;
-  border-top: 1px solid rgba(31, 93, 63, 0.18);
-  border-bottom: 1px solid rgba(31, 93, 63, 0.18);
+  border-top: 2px solid rgba(0,0,0,0.22);
+  border-bottom: 2px solid rgba(0,0,0,0.22);
   color: #000000;
 }
 
 .lineup-headliners a,
 .lineup-rest a {
-  border-color: rgba(31, 93, 63, 0.35);
+  border-color: rgba(0,0,0,0.18);
 }
 
-.slot .time, .feature .num, .slot .stage, .btn-x, .btn-x:hover {
-    color: var(--edition-accent-2);
+.footer {
+  background: #140d0b;
+}
+
+.footer-bottom {
+  border-top-color: rgba(240, 234, 217, 0.12);
 }

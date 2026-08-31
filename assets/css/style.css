@@ -8,15 +8,15 @@ l'intero sito si aggiorna.
 
 :root {
   /* ---- COLORI -------------------------------------------------------- */
-  --bg: #f4efe4; /* sfondo principale (carta calda) */
-  --bg-2: #ece3d2; /* sfondo sezioni alternate */
-  --ink: #181611; /* testo principale */
-  --ink-soft: #57503f; /* testo secondario / didascalie */
-  --accent: #e23d28; /* colore primario (inviti, accenti) */
-  --accent-2: #1f5d3f; /* colore secondario (verde bosco) */
-  --line: rgba(24, 22, 17, .14); /* bordi e separatori */
-  --dark: #14130f; /* sfondi scuri (footer, hero veil) */
-  --on-dark: #f4efe4; /* testo sui fondi scuri */
+  --bg: #12110f; /* sfondo principale scuro */
+  --bg-2: #1b1815; /* sfondo sezioni alternate */
+  --ink: #f2eadc; /* testo principale chiaro */
+  --ink-soft: #d3c6b4; /* testo secondario / didascalie */
+  --accent: #ff7a3d; /* colore primario caldo e leggibile */
+  --accent-2: #c0a36a; /* colore secondario dorato */
+  --line: rgba(242, 234, 220, .12); /* bordi e separatori */
+  --dark: #0d0c0a; /* sfondi molto scuri */
+  --on-dark: #f2eadc; /* testo sui fondi scuri */
 
   /* ---- FONT ---------------------------------------------------------- */
   --font-display: "Bricolage Grotesque", "Arial Black", sans-serif; /* titoli */
@@ -115,7 +115,7 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
   transition: transform .25s ease, background .25s ease, color .25s ease;
 }
-.btn-x:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: translateY(-2px); }
+.btn-x:hover { background: var(--accent); border-color: var(--accent); color: #17120f; transform: translateY(-2px); }
 .btn-x--ghost { background: transparent; color: var(--ink); }
 .btn-x--ghost:hover { background: var(--ink); color: var(--bg); }
 .btn-x .arr { transition: transform .25s ease; }
@@ -139,7 +139,7 @@ Il colore del testo segue lo sfondo:
 }
 .nav--on-dark:not(.is-solid) { color: var(--on-dark); }
 .nav.is-solid {
-  background: var(--bg);
+  background: rgba(18, 17, 15, .95);
   box-shadow: 0 1px 0 var(--line);
   color: var(--ink);
 }
@@ -203,8 +203,8 @@ Il colore del testo segue lo sfondo:
   content: ""; position: absolute; inset: 0 0 auto 0; height: 14px;
 }
 .nav-drop-menu .nav-drop-inner {
-  background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 8px; box-shadow: 0 18px 40px rgba(0,0,0,.12);
+  background: #1c1916; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 8px; box-shadow: 0 18px 40px rgba(0,0,0,.28);
 }
 .nav-drop:hover .nav-drop-menu,
 .nav-drop:focus-within .nav-drop-menu,
@@ -213,7 +213,7 @@ Il colore del testo segue lo sfondo:
 }
 .nav-drop-menu a { display: block; padding: 8px 14px; font-size: .8rem; color: var(--ink); }
 .nav-drop-menu a::after { display: none; }
-.nav-drop-menu a:hover { background: var(--bg-2); }
+.nav-drop-menu a:hover { background: rgba(255,255,255,.04); }
 
 /* selettore lingua */
 .lang-switch {
@@ -313,7 +313,7 @@ HERO
 }
 
 .hero-cta { margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap; }
-.hero-cta .btn-x { background: var(--accent); border-color: var(--accent); color: #fff; }
+.hero-cta .btn-x { background: var(--accent); border-color: var(--accent); color: #17120f; }
 .hero-cta .btn-x:hover { background: var(--bg); border-color: var(--bg); color: var(--ink); }
 .hero-cta .btn-x--ghost { background: transparent; border-color: rgba(244,239,228,.5); color: var(--on-dark); }
 .hero-cta .btn-x--ghost:hover { background: var(--bg); color: var(--ink); border-color: var(--bg); }
@@ -550,7 +550,7 @@ CARD EDIZIONI (home / fondo pagina edizione)
   border: 2px solid var(--ink); border-radius: var(--radius);
   transition: background .2s ease, color .2s ease, transform .2s ease;
 }
-.ed-card:hover { background: var(--ink); color: var(--bg); transform: translateY(-3px); }
+.ed-card:hover { background: rgba(255,255,255,.04); color: var(--ink); transform: translateY(-3px); }
 .ed-card-year {
   font-family: var(--font-display); font-weight: 800; font-size: 2rem;
   letter-spacing: -.02em; color: var(--accent);

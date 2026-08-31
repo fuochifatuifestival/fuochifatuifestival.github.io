@@ -71,22 +71,23 @@ festival/
 
 Tutto si decide in `assets/js/config.js`:
 
-1. Copia `editions/2026.js` in `editions/<anno>.js`, aggiorna lineup,
-   programma, date, location, e metti `status: "upcoming"`.
+1. Copia la cartella `editions/2026/` in `editions/<anno>/`, aggiorna lineup,
+   programma, date, location e metti `status: "upcoming"` dentro
+   `editions/<anno>/edition.js`.
 2. In `config.js` cambia:
    ```js
    hasUpcoming: true,
    current: "<anno>",
    ```
-3. In `index.html`, aggiungi lo script della nuova edizione **prima** di
-   `festival.js`:
+3. In `index.html`, se vuoi mostrare la nuova edizione come home evento,
+   aggiungi lo script della nuova edizione **prima** di `festival.js`:
    ```html
-   <script src="editions/<anno>.js"></script>
+   <script src="editions/<anno>/edition.js"></script>
    ```
    Da questo momento la home mostra automaticamente la pagina
    dell'evento al posto di "chi siamo".
 4. Quando l'evento sarà concluso e diventerà un'edizione passata:
-   - in `editions/<anno>.js` metti `status: "past"`
+   - in `editions/<anno>/edition.js` metti `status: "past"`
    - crea `editions/<anno>/index.html` copiando quella di `editions/2026/`
      e aggiornando i riferimenti all'anno (vedi commenti nel file)
    - aggiungi l'edizione in cima all'array `editions` di `config.js`:
