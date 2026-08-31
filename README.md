@@ -11,11 +11,16 @@ festival/
 ├── index.html               ← HOME: chi siamo + carosello (nessun evento in programma)
 ├── chi-siamo.html           ← pagina "chi siamo" completa (storia dal 2012), raggiungibile dal menu
 ├── editions/
-│   ├── 2026.js               ← CONTENUTI "Un giorno di fuochi" (programma, lineup, location, galleria) bilingue
+│   ├── 2018/
+│   │   ├── edition.js       ← contenuti edizione 2018 (lineup, location, galleria)
+│   │   ├── index.html       ← pagina pubblica dell'edizione 2018
+│   │   └── style.css        ← stile specifico dell'edizione 2018
 │   └── 2026/
-│       └── index.html        ← pagina pubblica dell'edizione 2026
+│       ├── edition.js       ← contenuti edizione 2026 (lineup, location, galleria)
+│       ├── index.html       ← pagina pubblica dell'edizione 2026
+│       └── style.css        ← stile specifico dell'edizione 2026
 └── assets/
-    ├── css/style.css        ← COLORI E FONT (blocco :root in cima) + stili carosello/card/dropdown
+    ├── css/style.css        ← COLORI E FONT globali del sito
     ├── img/                  ← metti qui le foto reali (vedi sotto)
     └── js/
         ├── config.js         ← nome, lingue, menu, social, testi home, etichette tradotte, edizioni, Google Analytics
@@ -112,30 +117,46 @@ Tutto in `assets/js/config.js`, blocco `home`: titolo, sottotitolo, testo
   una variabile, es. `--accent`, e si aggiorna tutto il sito).
 - Nome, social, voci di menu, crediti → `assets/js/config.js`.
 
-### 6. Stile specifico per ogni edizione
+### 6. Stile e script specifici per ogni edizione
 
-Se vuoi distinguere visivamente le varie edizioni, puoi aggiungere un file CSS
-extra dedicato a quell'anno, senza sovrascrivere lo stile globale del sito.
+Se vuoi distinguere visivamente le varie edizioni, puoi avere un file CSS e un
+file JS dedicati a quell'anno, senza sovrascrivere lo stile globale del sito.
 
 #### Come funziona
 
 - Lo stile principale resta in `assets/css/style.css`.
-- Ogni edizione ha un suo file `editions/<anno>/style.css`.
-- La pagina dell'edizione carica prima lo stile globale e poi lo stile
-  specifico dell'anno, così i valori dell'edizione possono sovrascrivere
-  quelli generali.
+- Ogni edizione ha il suo file `editions/<anno>/style.css`.
+- Ogni edizione ha anche il suo file `editions/<anno>/<anno>.js` con i dati
+  della pagina.
+- La pagina dell'edizione carica prima lo stile globale, poi lo stile specifico,
+  e infine il file JS dell'edizione.
 
 #### Esempio
 
-Per un'edizione del 2018:
+Per un'edizione 2018, la struttura è:
+
+```text
+editions/
+└── 2018/
+    ├── edition.js
+    ├── index.html
+    └── style.css
+```
+
+e nel file `editions/2018/index.html`:
 
 ```html
 <link rel="stylesheet" href="../../assets/css/style.css">
-<link rel="stylesheet" href="../2018/style.css">
+<link rel="stylesheet" href="./style.css">
+
+<script src="../../assets/js/config.js"></script>
+<script src="../../assets/js/ga.js"></script>
+<script src="./edition.js"></script>
+<script src="../../assets/js/festival.js"></script>
 ```
 
 Nel file `editions/2018/style.css` puoi definire palette, colori di accento,
-background e dettagli grafici dipendenti dall'edizione, ad esempio:
+background e dettagli grafici specifici dell'edizione, ad esempio:
 
 ```css
 :root {
@@ -157,9 +178,11 @@ body {
 In pratica:
 
 1. crea la cartella `editions/<anno>/` se non esiste;
-2. crea `style.css` dentro quella cartella;
-3. aggiungi il link al file nella pagina `editions/<anno>/index.html`;
-4. usa variabili CSS e selettori specifici per personalizzare il look senza
+2. crea il file `editions/<anno>/<anno>.js` con i contenuti dell'edizione;
+3. crea `style.css` dentro quella cartella;
+4. aggiungi il link allo stile e il script JS nella pagina
+   `editions/<anno>/index.html`;
+5. usa variabili CSS e selettori specifici per personalizzare il look senza
    modificare il design di tutte le edizioni.
 
 Questo permette di avere un'identità visiva distinta per ogni anno mantenendo

@@ -433,7 +433,7 @@ In genere NON serve toccare questo file: i contenuti stanno in
           '<div class="wrap">' +
             '<span class="eyebrow" data-reveal>' + ui("program") + '</span>' +
             '<div class="basic-list" data-reveal>' + flatProgram.map(function (s) {
-              return '<div class="slot"><div class="time">' + t(s.time) + '</div><div class="act">' + (s.name || "") + '</div><div class="stage">' + t(s.stage || "") + "</div></div>";
+              return '<div class="slot"><div class="time">' + t(s.time) + '</div><div class="act">' + t(s.name || "") + '</div><div class="stage">' + t(s.stage || "") + "</div></div>";
             }).join("") + "</div>" +
           "</div>" +
         "</section>"

@@ -3,11 +3,11 @@ STILE SPECIFICO EDIZIONE 2026
 ============================================================================ */
 
 :root {
-  --edition-accent: #1f5d3f;
-  --edition-accent-2: #d88d3c;
-  --edition-bg: #f7f2ea;
-  --edition-bg-2: #ece2d2;
-  --edition-ink: #102218;
+  --edition-accent: #000000;
+  --edition-accent-2: #c1c1b0;
+  --edition-bg: #c13717;
+  --edition-bg-2: #c25942;
+  --edition-ink: #000000;
 }
 
 body {
@@ -44,12 +44,17 @@ body {
 }
 
 .marquee {
-  background: rgba(31, 93, 63, 0.08);
+  background: #c1c1b0;
   border-top: 1px solid rgba(31, 93, 63, 0.18);
   border-bottom: 1px solid rgba(31, 93, 63, 0.18);
+  color: #000000;
 }
 
 .lineup-headliners a,
 .lineup-rest a {
   border-color: rgba(31, 93, 63, 0.35);
+}
+
+.slot .time, .feature .num, .slot .stage, .btn-x, .btn-x:hover {
+    color: var(--edition-accent-2);
 }
