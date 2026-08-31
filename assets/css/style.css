@@ -338,7 +338,7 @@ MARQUEE
 .marquee-track { display: inline-flex; gap: 40px; animation: scroll-x 22s linear infinite; }
 .marquee span { font-family: var(--font-display); font-weight: 800; text-transform: uppercase;
   font-size: 1.4rem; letter-spacing: .02em; display: inline-flex; gap: 40px; align-items: center; }
-.marquee span::after { content: "✦"; }
+/*.marquee span::after { content: "✦"; }*/
 @keyframes scroll-x { to { transform: translateX(-50%); } }
 
 /* ============================================================================

@@ -112,6 +112,59 @@ Tutto in `assets/js/config.js`, blocco `home`: titolo, sottotitolo, testo
   una variabile, es. `--accent`, e si aggiorna tutto il sito).
 - Nome, social, voci di menu, crediti → `assets/js/config.js`.
 
+### 6. Stile specifico per ogni edizione
+
+Se vuoi distinguere visivamente le varie edizioni, puoi aggiungere un file CSS
+extra dedicato a quell'anno, senza sovrascrivere lo stile globale del sito.
+
+#### Come funziona
+
+- Lo stile principale resta in `assets/css/style.css`.
+- Ogni edizione ha un suo file `editions/<anno>/style.css`.
+- La pagina dell'edizione carica prima lo stile globale e poi lo stile
+  specifico dell'anno, così i valori dell'edizione possono sovrascrivere
+  quelli generali.
+
+#### Esempio
+
+Per un'edizione del 2018:
+
+```html
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../2018/style.css">
+```
+
+Nel file `editions/2018/style.css` puoi definire palette, colori di accento,
+background e dettagli grafici dipendenti dall'edizione, ad esempio:
+
+```css
+:root {
+  --edition-accent: #8b2e24;
+  --edition-bg: #f3e6d2;
+}
+
+body {
+  background: var(--edition-bg);
+}
+
+.btn-x,
+.btn-x:hover {
+  background: var(--edition-accent);
+  border-color: var(--edition-accent);
+}
+```
+
+In pratica:
+
+1. crea la cartella `editions/<anno>/` se non esiste;
+2. crea `style.css` dentro quella cartella;
+3. aggiungi il link al file nella pagina `editions/<anno>/index.html`;
+4. usa variabili CSS e selettori specifici per personalizzare il look senza
+   modificare il design di tutte le edizioni.
+
+Questo permette di avere un'identità visiva distinta per ogni anno mantenendo
+lo stesso sistema generale di layout, tipografia e componenti.
+
 ---
 
 ## Google Analytics

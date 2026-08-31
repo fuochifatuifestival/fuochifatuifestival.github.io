@@ -59,7 +59,7 @@ window.EDITIONS = window.EDITIONS || {};
     lineup: [
       { name: "Fosca", headliner: true },
       { name: "Suspectra", headliner: true },
-      { name: "Nic T", headliner: true }
+      { name: "Nic T", headliner: true },
     ],
 
     /* Programma della giornata. */

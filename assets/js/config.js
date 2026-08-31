@@ -46,7 +46,8 @@ window.SITE_CONFIG = {
      "slug" è il nome della cartella (utile per titoli come
      "Un giorno di fuochi" invece del solo anno). */
   editions: [
-    { year: "2026", slug: "2026", label: { it: "Un giorno di fuochi", en: "A day of wildfires" } }
+    { year: "2026", slug: "2026", label: { it: "Un giorno di fuochi", en: "A day of wildfires" } },
+    { year: "2018", slug: "2018", label: { it: "Fuochi Fatui Festival", en: "Fuochi Fatui Festival" } }
   ],
 
   /* Voci di menu fisse (le edizioni passate vengono aggiunte in automatico

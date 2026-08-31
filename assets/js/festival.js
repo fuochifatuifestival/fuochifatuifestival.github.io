@@ -50,10 +50,14 @@ In genere NON serve toccare questo file: i contenuti stanno in
   /* Elenco edizioni passate normalizzato: accetta sia la vecchia forma
      (array di stringhe anno) sia la nuova (array di oggetti {year,slug,label}). */
   function pastEditions() {
-    return (CFG.editions || []).map(function (e) {
-      if (typeof e === "string") return { year: e, slug: e, label: null };
-      return { year: e.year, slug: e.slug || e.year, label: e.label || null };
-    });
+    return (CFG.editions || [])
+      .map(function (e) {
+        if (typeof e === "string") return { year: e, slug: e, label: null };
+        return { year: e.year, slug: e.slug || e.year, label: e.label || null };
+      })
+      .sort(function (a, b) {
+        return parseInt(b.year, 10) - parseInt(a.year, 10);
+      });
   }
 
   /* URL corretto di una pagina (con lingua) in base alla profondità. */
@@ -381,7 +385,7 @@ In genere NON serve toccare questo file: i contenuti stanno in
     /* ---- MARQUEE ---- */
     if (d.lineup && d.lineup.length) {
       var mq = d.lineup.slice(0, 8).map(function (a) { return a.name; }).join("<span>&#10022;</span>");
-      frag.appendChild(el('<div class="marquee"><div class="marquee-track"><span>' + mq + "</span><span>" + mq + "</span></div></div>"));
+      frag.appendChild(el('<div class="marquee"><div class="marquee-track"><span>' + mq + "</span><span>&#10022;</span><span>" + mq + "</span><span>&#10022;</span><span>" + mq + "</span><span>&#10022;</span><span>" + mq + "</span><span>&#10022;</span></div></div>"));
     }
 
     /* ---- INTRO ---- */
@@ -420,34 +424,20 @@ In genere NON serve toccare questo file: i contenuti stanno in
     }
 
     /* ---- PROGRAMMA ---- */
-    if (d.program && d.program.length) {
-      var tabs = "", panels = "";
-      d.program.forEach(function (day, i) {
-        var on = i === 0 ? " active" : "";
-        tabs += '<button class="day-tab' + on + '" data-day="' + i + '">' + t(day.day) + "</button>";
-        var slots = day.items.map(function (s) {
-          return '<div class="slot"><div class="time">' + t(s.time) + '</div><div class="act">' + s.name +
-                 '</div><div class="stage">' + t(s.stage || "") + "</div></div>";
-        }).join("");
-        panels += '<div class="day-panel' + on + '" data-day="' + i + '">' + slots + "</div>";
-      });
+    if (d.program && d.program.length && d.program.some(function (day) { return day && day.items && day.items.length; })) {
+      var flatProgram = d.program.reduce(function (acc, day) {
+        return acc.concat((day && day.items) || []);
+      }, []);
       var prog = el(
         '<section class="section">' +
           '<div class="wrap">' +
             '<span class="eyebrow" data-reveal>' + ui("program") + '</span>' +
-            '<h2 class="section-title" data-reveal>' + ui("dayByDay") + "</h2>" +
-            '<div class="day-tabs" data-reveal>' + tabs + "</div>" +
-            '<div class="day-panels" data-reveal>' + panels + "</div>" +
+            '<div class="basic-list" data-reveal>' + flatProgram.map(function (s) {
+              return '<div class="slot"><div class="time">' + t(s.time) + '</div><div class="act">' + (s.name || "") + '</div><div class="stage">' + t(s.stage || "") + "</div></div>";
+            }).join("") + "</div>" +
           "</div>" +
         "</section>"
       );
-      prog.querySelectorAll(".day-tab").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          var i = btn.getAttribute("data-day");
-          prog.querySelectorAll(".day-tab").forEach(function (b) { b.classList.toggle("active", b === btn); });
-          prog.querySelectorAll(".day-panel").forEach(function (p) { p.classList.toggle("active", p.getAttribute("data-day") === i); });
-        });
-      });
       frag.appendChild(prog);
     }
 
