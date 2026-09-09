@@ -103,12 +103,14 @@ window.SITE_CONFIG = {
        mostrato un riquadro colorato al posto della foto (comodo per
        partire subito senza materiale fotografico). */
     carousel: [
-      { caption: { it: "Un giorno di fuochi · 2026", en: "A day of wildfires · 2026" }, img: "" },
-      { caption: { it: "Pubblico al tramonto", en: "Crowd at sunset" }, img: "" },
-      { caption: { it: "Concerti al Castello di Alboino", en: "Concerts at Castello di Alboino" }, img: "" },
-      { caption: { it: "Swap party", en: "Swap party" }, img: "" },
-      { caption: { it: "Passeggiata al Vincheto di Celarda", en: "Guided walk at Vincheto di Celarda" }, img: "" },
-      { caption: { it: "Dibattito pubblico", en: "Public talk" }, img: "" }
+      { caption: { it: "Nic T live", en: "Nic T live" }, img: "../../assets/img/2026/concert.jpg" },
+      { caption: { it: "Preludio Veneto", en: "Preludio Veneto" }, img: "../../assets/img/2026/talk.jpg" },
+      { caption: { it: "Un Giorno di Fuochi", en: "Un Giorno di Fuochi" }, img: "../../assets/img/2026/people.jpg" },
+      { caption: { it: "Bruno Belissimo", en: "Bruno Belissimo" }, img: "../../assets/img/2018/bruno.jpg" },
+      { caption: { it: "Live", en: "Live" }, img: "../../assets/img/2018/live.jpg" },
+      { caption: { it: "Proiezioni", en: "Projections" }, img: "../../assets/img/2018/proiezione.jpg" },
+      { caption: { it: "Proiezioni", en: "Projections" }, img: "../../assets/img/2018/proiezione3.jpg" },
+      { caption: { it: "Le magliette di Fuochi Fatui", en: "The T-shirts of Fuochi Fatui" }, img: "../../assets/img/2018/merch.jpg" },
     ]
   },
 
