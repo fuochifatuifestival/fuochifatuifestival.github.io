@@ -58,11 +58,15 @@ window.EDITIONS = window.EDITIONS || {};
     },
 
     gallery: [
-      { caption: { it: "Castello di Alboino", en: "Castello di Alboino" }, img: "" },
-      { caption: { it: "Bruno Belissimo", en: "Bruno Belissimo" }, img: "" },
-      { caption: { it: "Hit-Klune", en: "Hit-Klune" }, img: "" },
-      { caption: { it: "MAKAI", en: "MAKAI" }, img: "" },
-      { caption: { it: "Pubblico al castello", en: "Audience at the castle" }, img: "" }
+      { caption: { it: "Bruno Belissimo", en: "Bruno Belissimo" }, img: "../../assets/img/2018/bruno.jpg" },
+      { caption: { it: "Live", en: "Live" }, img: "../../assets/img/2018/live.jpg" },
+      { caption: { it: "Palco", en: "Performance" }, img: "../../assets/img/2018/live2.jpg" },
+      { caption: { it: "Proiezioni", en: "Projections" }, img: "../../assets/img/2018/proiezione.jpg" },
+      { caption: { it: "Pubblico", en: "Audience" }, img: "../../assets/img/2018/people.jpg" },
+      { caption: { it: "Proiezioni", en: "Projections" }, img: "../../assets/img/2018/proiezione2.jpg" },
+      { caption: { it: "Musica!", en: "Music!" }, img: "../../assets/img/2018/macchina.jpg" },
+      { caption: { it: "Proiezioni", en: "Projections" }, img: "../../assets/img/2018/proiezione3.jpg" },
+      { caption: { it: "Le magliette di Fuochi Fatui", en: "The T-shirts of Fuochi Fatui" }, img: "../../assets/img/2018/merch.jpg" },
     ]
   };
 })();
