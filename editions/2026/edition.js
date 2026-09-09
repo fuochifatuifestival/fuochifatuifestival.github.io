@@ -94,12 +94,12 @@ window.EDITIONS = window.EDITIONS || {};
        "img": "percorso/foto.jpg" per usare una foto reale al posto del
        riquadro colorato (vedi README -> "Foto reali"). */
     gallery: [
-      { caption: { it: "Nic T live", en: "Nic T live" }, img: "img/2026/concert.jpg" },
-      { caption: { it: "Passeggiata guidata al Vincheto di Celarda", en: "Guided walk at Vincheto di Celarda" }, img: "img/2026/vincheto.jpg" },
-      { caption: { it: "Le Poesie di Alberto Spinelli", en: "The Poems of Alberto Spinelli" }, img: "img/2026/poesie.jpg" },
-      { caption: { it: "Swap party", en: "Swap party" }, img: "img/2026/swap.jpg" },
-      { caption: { it: "Preludio Veneto", en: "Preludio Veneto" }, img: "img/2026/talk.jpg" },
-      { caption: { it: "Un Giorno di Fuochi", en: "Un Giorno di Fuochi" }, img: "img/2026/people.jpg" },
+      { caption: { it: "Nic T live", en: "Nic T live" }, img: "../../assets/img/2026/concert.jpg" },
+      { caption: { it: "Passeggiata guidata al Vincheto di Celarda", en: "Guided walk at Vincheto di Celarda" }, img: "../../assets/img/2026/vincheto.jpg" },
+      { caption: { it: "Le Poesie di Alberto Spinelli", en: "The Poems of Alberto Spinelli" }, img: "../../assets/img/2026/poesie.jpg" },
+      { caption: { it: "Swap party", en: "Swap party" }, img: "../../assets/img/2026/swap.jpg" },
+      { caption: { it: "Preludio Veneto", en: "Preludio Veneto" }, img: "../../assets/img/2026/talk.jpg" },
+      { caption: { it: "Un Giorno di Fuochi", en: "Un Giorno di Fuochi" }, img: "../../assets/img/2026/people.jpg" },
     ]
   };
 })();
